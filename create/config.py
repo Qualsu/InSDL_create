@@ -1,0 +1,2 @@
+ARCHIVE_URL = "https://github.com/Qualsu/InSDL/releases/download/InSDL-0.X.X/InSDL-v0.3.0.zip"
+COMPILE_COMMAND = "g++ src/main.cpp -g -o build/build.exe -lSDL3 -lSDL3_ttf -lSDL3_Image -Iheader -Llib -Iinclude -Iinclude/InSDL" 
