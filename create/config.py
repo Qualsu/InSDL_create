@@ -1,2 +1,6 @@
-ARCHIVE_URL = "https://github.com/Qualsu/InSDL/releases/download/InSDL-0.X.X/InSDL-v0.3.0.zip"
-COMPILE_COMMAND = "g++ src/main.cpp -g -o build/build.exe -lSDL3 -lSDL3_ttf -lSDL3_Image -Iheader -Llib -Iinclude -Iinclude/InSDL" 
+GITHUB_REPOSITORY = "Qualsu/InSDL"
+GITHUB_LATEST_RELEASE_API = f"https://api.github.com/repos/{GITHUB_REPOSITORY}/releases/latest"
+GITHUB_LATEST_RELEASE_URL = f"https://github.com/{GITHUB_REPOSITORY}/releases/latest"
+RELEASE_ARCHIVE_NAME = "InSDL-v{version}.zip"
+
+DEFAULT_TIMEOUT = 30
