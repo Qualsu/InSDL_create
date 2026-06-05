@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "insdl-create"
+version = "0.6.0"
+description = "CLI for creating InSDL projects"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+authors = [
+    { name = "Qualsu" },
+]
+license = { text = "MIT" }
+keywords = ["insdl", "sdl", "cpp", "cli", "project-generator"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+
+[project.scripts]
+insdl = "create.command:main"
+
+[project.urls]
+Homepage = "https://github.com/Qualsu/InSDL"
+Source = "https://github.com/Qualsu/InSDL_create"
+
+[tool.setuptools.packages.find]
+include = ["create*"]
