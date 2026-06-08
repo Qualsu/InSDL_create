@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "insdl-create"
-version = "0.6.0"
+version = "0.6.0.1"
 description = "CLI for creating InSDL projects"
 readme = "README.md"
 requires-python = ">=3.9"
