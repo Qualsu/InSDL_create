@@ -12,14 +12,48 @@ import create.config as config
 
 README_TEMPLATE = """# {project_name}
 
-Use `make` for build
+## Project Structure
+
+- `build/` - build artifacts created after compilation
+- `header/` - header files for your own classes and modules
+- `lib/` - third-party libraries used by the project, for example `.a`, `.lib`, or other binary dependencies
+- `include/` - external header files for connected libraries and dependencies
+- `src/` - source files of the project. The starting entry point is `src/main.cpp`
+
+## Build
+
+This project uses the `makefile` that comes from the downloaded InSDL archive
+
+Basic commands:
+
+```sh
+make
+make compile
+make run
+make clean
+```
+
+By default, the makefile builds `src/main.cpp` and places the executable into `build/`
+
+If needed, you can override variables from the command line:
+
+```sh
+make SRC=src/main.cpp
+make print-vars
+```
+
+## Documentation
+
+- Russian docs: [RU.md](https://github.com/Qualsu/InSDL/blob/main/docs/RU.md)
+- English docs: [EN.md](https://github.com/Qualsu/InSDL/blob/main/docs/EN.md)
 """
 
 GITIGNORE_TEMPLATE = """build/
+.vscode/
+
 *.exe
 *.o
 *.obj
-.vscode/
 """
 
 def get_latest_archive_url():
@@ -119,9 +153,17 @@ def extract_archive(archive_path, target_dir):
                 shutil.copyfileobj(source, output)
 
 def write_project_files(target_dir, project_name):
+    template_main_path = Path(__file__).resolve().parent.parent / "main.cpp"
     readme_path = target_dir / "README.md"
     gitignore_path = target_dir / ".gitignore"
+    src_dir = target_dir / "src"
+    header_dir = target_dir / "header"
+    main_cpp_path = src_dir / "main.cpp"
 
+    src_dir.mkdir(parents=True, exist_ok=True)
+    header_dir.mkdir(parents=True, exist_ok=True)
+
+    shutil.copyfile(template_main_path, main_cpp_path)
     readme_path.write_text(README_TEMPLATE.format(project_name=project_name), encoding="utf-8")
     gitignore_path.write_text(GITIGNORE_TEMPLATE, encoding="utf-8")
 

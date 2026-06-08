@@ -1,6 +1,6 @@
 # InSDL Create
 
-CLI for creating InSDL projects.
+CLI utility for creating starter projects for InSDL.
 
 ## Installation
 
@@ -8,15 +8,15 @@ CLI for creating InSDL projects.
 pip install insdl-create
 ```
 
-After installation, the `insdl` command is available.
+After installation, the `insdl` command becomes available.
 
-## Creating a Project
+## Create a Project
 
 ```sh
 insdl
 ```
 
-You can pass the project name directly:
+Or pass the project name directly:
 
 ```sh
 insdl my-project
