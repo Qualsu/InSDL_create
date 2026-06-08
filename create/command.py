@@ -1,9 +1,15 @@
 import argparse
 
+from create import __version__
 from create.create import create_project
 
 def main():
     parser = argparse.ArgumentParser(description="Create an InSDL project")
+    parser.add_argument(
+        "--version",
+        action="version",
+        version=f"InSDL Create {__version__}",
+    )
     parser.add_argument("project_name", nargs="?", help="Project name")
     args = parser.parse_args()
 
